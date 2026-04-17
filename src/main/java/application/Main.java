@@ -1,9 +1,7 @@
-package application;
+package main.java.application;
 
-import deezer.Deezer;
-import deezer.models.Album;
-import deezer.models.Artist;
-import deezer.models.Track;
+import main.java.deezer.Deezer;
+import main.java.deezer.models.Track;
 import org.json.simple.parser.ParseException;
 
 import javax.swing.*;

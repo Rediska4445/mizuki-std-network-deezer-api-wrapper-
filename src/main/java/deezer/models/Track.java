@@ -1,4 +1,4 @@
-package deezer.models;
+package main.java.deezer.models;
 
 import java.util.Objects;
 

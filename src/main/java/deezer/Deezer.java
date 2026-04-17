@@ -1,7 +1,7 @@
-package deezer;
+package main.java.deezer;
 
-import deezer.models.Artist;
-import deezer.models.Track;
+import main.java.deezer.models.Artist;
+import main.java.deezer.models.Track;
 import org.json.simple.parser.ParseException;
 import rf.ebanina.utils.formats.json.JsonProcess;
 import rf.ebanina.utils.network.Request;
