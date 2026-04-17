@@ -1,4 +1,4 @@
-package main.java.deezer;
+package deezer;
 
 import java.net.URLEncoder;
 import java.nio.charset.Charset;

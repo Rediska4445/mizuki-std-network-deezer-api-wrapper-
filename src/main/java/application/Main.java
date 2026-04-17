@@ -1,7 +1,7 @@
-package main.java.application;
+package application;
 
-import main.java.deezer.Deezer;
-import main.java.deezer.models.Track;
+import deezer.Deezer;
+import deezer.models.Track;
 import org.json.simple.parser.ParseException;
 
 import javax.swing.*;
@@ -220,17 +220,12 @@ public class Main
     }
 
     public static void main(String[] args) throws Exception {
-//        SwingUtilities.invokeLater(() -> {
-//            try {
-//                UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-//            } catch (Exception ignored) {}
-//
-//            new Main().setVisible(true);
-//        });
+        SwingUtilities.invokeLater(() -> {
+            try {
+                UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+            } catch (Exception ignored) {}
 
-        Deezer deezer1 = new Deezer();
-        System.out.println(deezer1.getRelatedTracks(
-                "Dvrst - dream space", 6, 6, 6, 0, 3
-        ));
+            new Main().setVisible(true);
+        });
     }
 }
