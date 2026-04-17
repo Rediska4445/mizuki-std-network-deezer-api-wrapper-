@@ -95,9 +95,8 @@ Launches test window demonstrating all API endpoints with live data.
 
 ```java
 public class Deezer
-        implements ISimilar
-{
-    protected deezer.Deezer deezer = new deezer.Deezer();
+        implements ISimilar {
+    protected main.java.deezer.Deezer deezer = new main.java.deezer.Deezer();
 
     @Override
     public void updateSimilar(Track track) {

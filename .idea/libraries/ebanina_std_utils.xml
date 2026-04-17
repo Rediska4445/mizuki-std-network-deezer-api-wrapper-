@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="ebanina-std-utils">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../libraries/classes/ebanina-std-utils.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
