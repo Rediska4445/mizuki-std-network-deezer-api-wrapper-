@@ -49,11 +49,9 @@ public class Deezer {
         ).toURL()).send().getBody();
 
         String dataObj = JsonProcess.getJsonItem(body.toString(), "data");
-
         String[] dataArray = JsonProcess.getJsonArray(dataObj);
 
         List<Track> tracksList = new ArrayList<>();
-
         for(String jsonTrack : dataArray) {
             Track track = api.getTrackFromJson(jsonTrack);
 
@@ -113,7 +111,9 @@ public class Deezer {
     public List<Track> searchTracks(
             String query,
             int limit
-    ) throws IOException, ParseException {
+    )
+            throws IOException, ParseException
+    {
         StringBuilder body = new Request(URI.create(
                 new QueryBuilder(apiUrl)
                         .path("search", "track")
@@ -121,6 +121,8 @@ public class Deezer {
                         .param("limit", limit)
                         .build()
         ).toURL()).send().getBody();
+
+        System.out.println(body);
 
         String dataObj = JsonProcess.getJsonItem(body.toString(), "data");
         String[] dataArray = JsonProcess.getJsonArray(dataObj);
@@ -144,7 +146,9 @@ public class Deezer {
 
     public List<Track> getRelatedTracks(
             String track
-    ) throws IOException, ParseException {
+    )
+            throws IOException, ParseException
+    {
         List<Track> tracks = new ArrayList<>();
 
         Track track1 = api.getTrack(track);
@@ -258,7 +262,7 @@ public class Deezer {
             return chainTracks;
         }
 
-        List<Artist> relatedArtists = getRelatedArtist(artistName, 3);  // 3 похожих
+        List<Artist> relatedArtists = getRelatedArtist(artistName, 3);
 
         for (Artist related : relatedArtists) {
             chainTracks.addAll(getArtistChainRecursive(related.getName(), maxDepth, currentDepth + 1, tracksPerArtist));
