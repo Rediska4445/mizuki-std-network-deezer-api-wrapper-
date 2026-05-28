@@ -117,3 +117,11 @@ public class Deezer
 - Self-contained JAR with test UI
 - No external authentication required
 - Uses public Deezer API endpoints
+
+---
+
+**Author:** Mizuka (Ebanina) Std.  
+**Created:** 21.04.2026.  
+**Deezer API via:** [deezer.com](https://developers.deezer.com/api).
+
+---
