@@ -3,7 +3,7 @@ package deezer;
 import deezer.models.Artist;
 import deezer.models.Track;
 import org.json.simple.parser.ParseException;
-import rf.ebanina.utils.formats.json.JsonProcess;
+import rf.ebanina.utils.io.formats.json.JsonProcess;
 import rf.ebanina.utils.network.Request;
 
 import java.io.IOException;
@@ -21,7 +21,7 @@ import java.util.stream.Stream;
  * <ul>
  *   <li>Сборку URL через {@link QueryBuilder}.</li>
  *   <li>HTTP-запросы через {@link rf.ebanina.utils.network.Request}.</li>
- *   <li>Парсинг JSON через {@link rf.ebanina.utils.formats.json.JsonProcess}.</li>
+ *   <li>Парсинг JSON через {@link rf.ebanina.utils.io.formats.json.JsonProcess}.</li>
  *   <li>Маппинг в модели {@link deezer.models.Track}, {@link deezer.models.Artist}.</li>
  * </ul>
  * </p>
@@ -201,7 +201,7 @@ import java.util.stream.Stream;
  * <ul>
  *   <li>{@link QueryBuilder}: сборка URL.</li>
  *   <li>{@link rf.ebanina.utils.network.Request}: HTTP-клиент.</li>
- *   <li>{@link rf.ebanina.utils.formats.json.JsonProcess}: JSON-парсер (StringBuilder → String[]).</li>
+ *   <li>{@link rf.ebanina.utils.io.formats.json.JsonProcess}: JSON-парсер (StringBuilder → String[]).</li>
  *   <li>{@link deezer.models}: доменные модели с сеттерами.</li>
  *   <li>{@link Api}: внутренний маппер JSON→модели (getTrackFromJson, getArtistFromJson, getAlbumFromJson).</li>
  * </ul>
@@ -223,7 +223,7 @@ import java.util.stream.Stream;
  *
  * @see Api для низкоуровневого маппинга
  * @see QueryBuilder для URL-билдинга
- * @see rf.ebanina.utils.formats.json.JsonProcess для парсинга
+ * @see rf.ebanina.utils.io.formats.json.JsonProcess для парсинга
  * @author mizuka-std
  * @version 1.0
  * @since 2026
@@ -822,7 +822,10 @@ public class Deezer
                         .param("q", query)
                         .param("limit", limit)
                         .build()
-        ).toURL()).send().getBody();
+        )
+                .toURL())
+                .send()
+                .getBody();
 
         String dataObj = JsonProcess.getJsonItem(body.toString(), "data");
         String[] dataArray = JsonProcess.getJsonArray(dataObj);

@@ -6,8 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="mizuka-deezer-api-wrapper" />
+        <module name="mizuki-deezer-api-wrapper" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="mizuka-deezer-api-wrapper" target="19" />
+    </bytecodeTargetLevel>
   </component>
 </project>

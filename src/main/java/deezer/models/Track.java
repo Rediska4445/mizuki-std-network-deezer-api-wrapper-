@@ -862,7 +862,7 @@ public class Track {
     }
     /**
      * <h3>Исполнитель setter (обогащение)</h3>
-     * Используется {@link deezer.Api#getTrack()} после базового парсинга.
+     * Используется {@link deezer.Api#getTrack(String)}} после базового парсинга.
      * <p>
      * <b>Цепочка:</b>
      * <pre>{@code

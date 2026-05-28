@@ -4,7 +4,7 @@ import deezer.models.Album;
 import deezer.models.Artist;
 import deezer.models.Track;
 import org.json.simple.parser.ParseException;
-import rf.ebanina.utils.formats.json.JsonProcess;
+import rf.ebanina.utils.io.formats.json.JsonProcess;
 import rf.ebanina.utils.network.Request;
 
 import java.io.IOException;

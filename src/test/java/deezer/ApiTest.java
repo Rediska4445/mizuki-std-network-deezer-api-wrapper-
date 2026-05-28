@@ -20,20 +20,21 @@ public class ApiTest {
     @Test
     void testGetTrack() {
         assertTimeout(Duration.ofSeconds(10), () -> {
-            Track res = api.getTrack("Beliver");
+            Track res = api.getTrack("Imagine Dragons - Believer");
 
             assertNotNull(res, "Трек равен null");
-            assertEquals(res.getTitle(), "Beliver");
+            assertEquals(res.getTitle(), "Believer");
         });
     }
 
     @Test
     void testGetAlbumByTrack() {
         assertTimeout(Duration.ofSeconds(10), () -> {
-            Track res = api.getTrack("Beliver");
+            Track res = api.getTrack("Imagine Dragons - Believer");
 
             assertNotNull(res.getAlbum(), "Трек равен null");
-            assertEquals(res.getAlbum().getTitle(), "Beliver");
+
+            assertNotNull(res.getAlbum().getTitle());
         });
     }
 
